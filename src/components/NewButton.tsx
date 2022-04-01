@@ -1,5 +1,5 @@
-import { PressableProps, Pressable, Text } from 'react-native';
-import React from 'react';
+import { PressableProps, Pressable, Text } from "react-native";
+import React from "react";
 
 function NewButton(props: PressableProps) {
   return (
