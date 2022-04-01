@@ -12,4 +12,4 @@ const testStyle = StyleSheet.create({
 
 storiesOf('CoreTextInput', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add('Core Text input', () => <CoreTextInput style={testStyle.input} />);
+  .add('Core Text input', () => <CoreTextInput labelText = 'test' style={testStyle.input} />);
