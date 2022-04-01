@@ -5,8 +5,9 @@ import {
   Text,
   TextStyle,
   StyleProp,
-  AccessibilityProps,
   StyleSheet,
+  TextInputProps,
+  TextProps
 } from 'react-native';
 
 const editableTextInputColor = '#494949';
@@ -14,8 +15,7 @@ const disabledTextInputColor = '#BBB';
 const focusedInputColor = 'blue';
 const minimumTouchableSize = 48;
 
-interface Props extends AccessibilityProps {
-  setCredentialsAreSubmittable?: (bool: boolean) => void;
+interface Props extends TextInputProps , TextProps {
   /** Pass along stylesheet in props */
   style?: StyleProp<TextStyle>;
   /** Pass along label and placeholder props for input */
@@ -24,8 +24,9 @@ interface Props extends AccessibilityProps {
 }
 
 function CoreTextInput(props: Props) {
-  const { setCredentialsAreSubmittable, labelText, placeholderText, style } =
-    props;
+  const { labelText, placeholderText, style, ...rest } = props;
+  
+    //rest [asdf, asdf, asdf, asdf,]
   const [value, setValue] = useState('');
   /** We allow user to disable text input (can be useful because disabled
    * text inputs don't get submitted) */
@@ -53,10 +54,6 @@ function CoreTextInput(props: Props) {
     },
   });
 
-  useEffect(() => {
-    if (setCredentialsAreSubmittable) setCredentialsAreSubmittable(!!value);
-  });
-
   // TODO: make label dynamic
   // TODO: make label position dynamic
   // TODO: make placeholder text dynamic
@@ -82,3 +79,4 @@ function CoreTextInput(props: Props) {
 }
 
 export default CoreTextInput;
+
