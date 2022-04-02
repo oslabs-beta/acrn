@@ -1,5 +1,6 @@
 import './Button/Button.stories';
 import './Welcome/Welcome.stories';
-import './NewButton/NewButton.stories.tsx';
-import './AccessibleTextInput/AccessibleInput.stories.tsx';
-import './NavigationContainer/NavigationContainer.stories.tsx';
+import './NewButton/NewButton.stories';
+import './AccessibleTextInput/AccessibleInput.stories';
+import './NavigationContainer/NavigationContainer.stories';
+import './CoreTextInput/CoreTextInput.stories';

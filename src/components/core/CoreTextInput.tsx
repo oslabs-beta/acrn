@@ -1,3 +1,4 @@
+/* eslint-disable react/require-default-props */
 import React, { useState, useEffect } from 'react';
 import {
   TextInput,
@@ -17,14 +18,15 @@ const minimumTouchableSize = 48;
 
 interface Props extends TextInputProps , TextProps {
   /** Pass along stylesheet in props */
-  style?: StyleProp<TextStyle>;
+  //TODO: CHANGE STYLE TYPE FOR A STYLESHEET.CREATE StyleProp<TextStyle>
+  style?: any;
   /** Pass along label and placeholder props for input */
   labelText?: string;
   placeholderText?: string;
 }
 
 function CoreTextInput(props: Props) {
-  const { labelText, placeholderText, style, ...rest } = props;
+  const { labelText , placeholderText, style , ...rest } = props;
   
     //rest [asdf, asdf, asdf, asdf,]
   const [value, setValue] = useState('');
@@ -54,6 +56,10 @@ function CoreTextInput(props: Props) {
     },
   });
 
+  
+
+
+
   // TODO: make label dynamic
   // TODO: make label position dynamic
   // TODO: make placeholder text dynamic
@@ -63,10 +69,10 @@ function CoreTextInput(props: Props) {
       accessibilityLabel="Enter value and password"
       accessibilityState={accessibilityState}
     >
-      <Text style={defaultStyle.label}>{labelText}</Text>
+      <Text style={[defaultStyle.label, style.label]}>{labelText || 'Label Placeholder'}</Text>
       <TextInput
-        style={[defaultStyle.input, style]}
-        placeholder={placeholderText}
+        style={[defaultStyle.input, style.input]}
+        placeholder={placeholderText || 'Placeholder'}
         placeholderTextColor={textInputColor}
         value={value}
         onChangeText={(text) => setValue(text)}
