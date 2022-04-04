@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { View, ViewProps } from 'react-native';
+import React from 'react';
+import { View, ViewProps, Text } from 'react-native';
 import ExternalUrl from '../components/ExternalUrl';
-// TODO: Create InternalLink Component
+import { Url } from '../components/ExternalUrl';
 
-export type url = [a: string, b: string]; // [0] -> page name, [1] -> url
+// TODO: Create InternalLink Component
 
 /*
  * example for url type
@@ -11,26 +11,37 @@ export type url = [a: string, b: string]; // [0] -> page name, [1] -> url
  * const url2: Array<url> = [['a','b'], ['c', 'd']];
  */
 interface Props extends ViewProps {
-  externalUrls: url[];
+  menuTitle?: string; // optional title to display over menu
+  accessibilityLabel?: string; // optional label to be screenread in lieu of menuTitle
+  externalUrls: Url[]; // array of URLs + page names to pass to child components
+  withUrlHint?: true; // optional boolean if accessibilityHint is desired for children
 }
 
-// TODO: Add unique keys to render
-
 function NavigationContainer(props: Props) {
-  // * Maybe use hooks
-  const externalUrls: JSX.Element[] = [];
-  for (let i = 0; i < props.externalUrls.length; i++) {
-    externalUrls.push(
+  const { externalUrls, withUrlHint, menuTitle, accessibilityLabel } = props;
+  const urls = [];
+  for (let i = 0; i < externalUrls.length; i += 1) {
+    urls.push(
       <ExternalUrl
         key={`url ${i}`}
-        url={props.externalUrls[i]}
-        accessibilityRole="menuitem"
+        url={externalUrls[i]}
+        withUrlHint={withUrlHint}
       />
     );
   }
+  // ? Consider using ScrollView
+  if (menuTitle) {
+    return (
+      <View accessibilityLabel={accessibilityLabel} accessibilityRole="menu">
+        <Text accessibilityRole="header"> {menuTitle} </Text>
+        {urls}
+      </View>
+    );
+  }
   return (
-    // ? Consider using ScrollView
-    <View accessibilityRole="menu">{externalUrls}</View>
+    <View accessibilityLabel={accessibilityLabel} accessibilityRole="menu">
+      {urls}
+    </View>
   );
 }
 
