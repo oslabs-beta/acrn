@@ -1,7 +1,7 @@
-import React from 'react';
-import { View, ViewProps, Text } from 'react-native';
-import ExternalUrl from '../components/ExternalUrl';
-import { Url } from '../components/ExternalUrl';
+import React from "react";
+import { View, ViewProps, Text } from "react-native";
+import ExternalUrl from "../components/ExternalUrl";
+import { Url } from "../components/ExternalUrl";
 
 // TODO: Create InternalLink Component
 
@@ -11,10 +11,10 @@ import { Url } from '../components/ExternalUrl';
  * const url2: Array<url> = [['a','b'], ['c', 'd']];
  */
 interface Props extends ViewProps {
-  menuTitle?: string; // optional title to display over menu
-  accessibilityLabel?: string; // optional label to be screenread in lieu of menuTitle
   externalUrls: Url[]; // array of URLs + page names to pass to child components
-  withUrlHint?: true; // optional boolean if accessibilityHint is desired for children
+  accessibilityLabel: string; // text to be screenread when View is selected
+  menuTitle?: string; // optional title to display over menu
+  withUrlHint?: true; // optional boolean if accessibility hints are desired for children
 }
 
 function NavigationContainer(props: Props) {
