@@ -6,7 +6,7 @@ interface IconProps extends PressableProps {
 }
 
 function Icon(props: IconProps) {
-  const {text} = props
+  const { text } = props
   return (
     <Pressable>
       {text}
