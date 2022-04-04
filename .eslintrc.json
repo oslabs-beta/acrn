@@ -27,6 +27,7 @@
       { "ignores": ["modules"] }
     ],
     "react/jsx-props-no-spreading": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }]
+    "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
+    "react/require-default-props": [0, {}]
   }
 }
