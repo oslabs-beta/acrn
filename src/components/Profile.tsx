@@ -1,14 +1,22 @@
 import React from 'react'
-import { ImageProps, Image } from 'react-native'
+import { ImageProps, Image, Pressable, PressableProps } from 'react-native'
 
-interface ProfileProps extends ImageProps {
-  uri: string // link to image
+
+type PressableWithoutStyleProps = Omit<PressableProps, "style">
+// type ImageWithoutSourceProps = Omit<ImageProps, "source">
+interface ProfileProps extends ImageProps, PressableWithoutStyleProps{
+  uri: string,
+  height: number,
+  width: number,
+  callback?: () => any;
 }
 
 function Profile(props: ProfileProps) {
-  const { uri } = props
+  const { uri, height, width, callback } = props
   return (
-    <Image source = {{uri}} style={{width: 400, height: 400}} />
+    <Pressable onPress={callback}>
+      <Image source = {{uri}} style={{width, height}}/>
+    </Pressable>
   )
 }
 

@@ -1,20 +1,26 @@
 import React from 'react';
-import { View, ViewProps, Text } from 'react-native';
+import { Pressable, PressableProps, Text} from 'react-native';
 import Profile from '../components/Profile';
-import Icon from '../components/Icon';
+import NewButton from '../components/NewButton';
 
-interface Props extends ViewProps {
+interface Props extends PressableProps {
   uri: string,
-  text: string
+  text: string,
+  height: number,
+  width: number,
+  padding?: number,
+  outerFunc?: () => any, // ? Are args typ needed?
+  innerFunc?: () => any,
 }
 
+
 function IconProfileContainer(props: Props) {
-  const { uri, text } = props
+  const { uri, text, height, width, padding, outerFunc, innerFunc } = props
   return(
-    <View>
-      <Icon text = { text }/>
-      <Profile uri = { uri } source={{uri}}/>
-    </View>
+    <Pressable onPress={outerFunc} style = {{padding}}>
+      <Profile uri = {uri} source = {0} height = {height} width = {width} callback = {innerFunc}/>
+      <NewButton text = { text }/>
+    </Pressable>
   )
 }
 
