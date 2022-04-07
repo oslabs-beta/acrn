@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import React, { useState, useEffect } from 'react';
+import React, { createRef, useEffect, useState, useRef, forwardRef,  } from 'react';
 import {
   TextInput,
   View,
@@ -8,9 +8,12 @@ import {
   StyleProp,
   StyleSheet,
   TextInputProps,
-  TextProps
+  TextProps,
+  AccessibilityProps
 } from 'react-native';
 
+
+// TODO: if we have time, pull out default styles to keep code DRY
 const editableTextInputColor = '#494949';
 const disabledTextInputColor = '#BBB';
 const focusedInputColor = 'blue';
@@ -19,16 +22,23 @@ const minimumTouchableSize = 48;
 interface Props extends TextInputProps , TextProps {
   /** Pass along stylesheet in props */
   //TODO: CHANGE STYLE TYPE FOR A STYLESHEET.CREATE StyleProp<TextStyle>
-  style?: any;
   /** Pass along label and placeholder props for input */
   labelText?: string;
   placeholderText?: string;
+  changeEditable?: boolean;
+  // TODO: find a way to avoid this any
+  style?: any;
 }
 
-function CoreTextInput(props: Props) {
-  const { labelText , placeholderText, style , ...rest } = props;
+
+const CoreTextInput = React.forwardRef<TextInput, Props>(
+ ({labelText = 'Label Placeholder', 
+  placeholderText = 'Placeholder',
+  accessibilityLabel = 'Accessible Text Input',
+  changeEditable = true,
+  style,
+  ...rest}: Props, ref) => {
   
-    //rest [asdf, asdf, asdf, asdf,]
   const [value, setValue] = useState('');
   /** We allow user to disable text input (can be useful because disabled
    * text inputs don't get submitted) */
@@ -38,7 +48,7 @@ function CoreTextInput(props: Props) {
     ? editableTextInputColor
     : disabledTextInputColor;
   const accessibilityState = { disabled: !editable };
-
+  
   /** Default Stylesheet */
   const defaultStyle = StyleSheet.create({
     label: {
@@ -55,24 +65,26 @@ function CoreTextInput(props: Props) {
       marginTop: 8,
     },
   });
-
+  useEffect(() => {
+    if (changeEditable === false) {
+      setEditable(false)
+    }
+  }, [editable])
   
-
-
-
-  // TODO: make label dynamic
-  // TODO: make label position dynamic
-  // TODO: make placeholder text dynamic
   return (
     <View
       accessible
-      accessibilityLabel="Enter value and password"
+      accessibilityLabel= {accessibilityLabel}
       accessibilityState={accessibilityState}
     >
-      <Text style={[defaultStyle.label, style.label]}>{labelText || 'Label Placeholder'}</Text>
-      <TextInput
-        style={[defaultStyle.input, style.input]}
-        placeholder={placeholderText || 'Placeholder'}
+      <Text style = {style ? ([defaultStyle.label, style.label]):defaultStyle.label}>
+        {labelText}
+      </Text>
+      <TextInput 
+        ref={ref}
+        style = {style ? ([defaultStyle.input, style.input]): defaultStyle.input}
+        // style={[defaultStyle.input, style.input]}
+        placeholder={placeholderText}
         placeholderTextColor={textInputColor}
         value={value}
         onChangeText={(text) => setValue(text)}
@@ -82,7 +94,6 @@ function CoreTextInput(props: Props) {
       />
     </View>
   );
-}
+})
 
 export default CoreTextInput;
-

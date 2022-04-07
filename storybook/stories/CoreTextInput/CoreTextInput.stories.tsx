@@ -6,14 +6,14 @@ import CoreTextInput from '../../../src/components/core/CoreTextInput';
 
 
 const testStyle = StyleSheet.create({
-  // input: {
-  //   color: 'orange',
-  // },
-  // label: {
-  //   color: 'orange'
-  // },
+  input: {
+    color: 'orange',
+  },
+  label: {
+    color: 'orange'
+  },
 });
 
 storiesOf('CoreTextInput', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add('Core Text input', () => <CoreTextInput  style={testStyle}/>);
+  .add('Core Text input', () => <CoreTextInput/>);

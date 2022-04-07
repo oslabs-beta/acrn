@@ -22,6 +22,8 @@
   },
   "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
+    //Line below to fix react props issues when extending props from native elements
+    "react/prop-types": "off",
     "node/no-unsupported-features/es-syntax": [
       "error",
       { "ignores": ["modules"] }
