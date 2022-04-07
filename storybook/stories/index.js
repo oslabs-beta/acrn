@@ -5,3 +5,4 @@ import "./AccessibleTextInput/AccessibleInput.stories";
 import "./NavigationContainer/NavigationContainer.stories";
 import "./CoreTextInput/CoreTextInput.stories";
 import "./IconProfile/IconProfile.stories";
+import "./CreateAccount/CreateAccount.stories"

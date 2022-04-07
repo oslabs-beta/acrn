@@ -1,5 +1,5 @@
 /* eslint-disable react/require-default-props */
-import React, { createRef, useEffect, useState, useRef, forwardRef,  } from 'react';
+import React, { createRef, useEffect, useState, useRef, forwardRef, } from 'react';
 import {
   TextInput,
   View,
@@ -25,7 +25,7 @@ interface Props extends TextInputProps , TextProps {
   /** Pass along label and placeholder props for input */
   labelText?: string;
   placeholderText?: string;
-  changeEditable?: boolean;
+  // changeEditable?: boolean;
   // TODO: find a way to avoid this any
   style?: any;
 }
@@ -35,7 +35,7 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
  ({labelText = 'Label Placeholder', 
   placeholderText = 'Placeholder',
   accessibilityLabel = 'Accessible Text Input',
-  changeEditable = true,
+  // changeEditable = true,
   style,
   ...rest}: Props, ref) => {
   
@@ -48,7 +48,14 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
     ? editableTextInputColor
     : disabledTextInputColor;
   const accessibilityState = { disabled: !editable };
+
+  useEffect(() => {
+    if (rest.editable === false) {
+      setEditable(false)
+    }
+  }, [])
   
+
   /** Default Stylesheet */
   const defaultStyle = StyleSheet.create({
     label: {
@@ -58,21 +65,26 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
       backgroundColor: '#FFF',
       padding: 8,
       height: minimumTouchableSize,
-      width: '100%',
+      minWidth: 150,
       borderColor: valueIsFocused ? focusedInputColor : textInputColor,
       borderWidth: valueIsFocused ? 2 : 1,
       borderRadius: 4,
       marginTop: 8,
     },
   });
-  useEffect(() => {
-    if (changeEditable === false) {
-      setEditable(false)
+
+
+  const handleChangeText = (text: string) => {
+    if (!editable) {
+      return;
     }
-  }, [editable])
+    setValue(text);
+    rest.onChangeText?.(text);
+  };
   
   return (
     <View
+      
       accessible
       accessibilityLabel= {accessibilityLabel}
       accessibilityState={accessibilityState}
@@ -83,14 +95,14 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
       <TextInput 
         ref={ref}
         style = {style ? ([defaultStyle.input, style.input]): defaultStyle.input}
-        // style={[defaultStyle.input, style.input]}
-        placeholder={placeholderText}
+        placeholder={rest.placeholder ? rest.placeholder: placeholderText}
         placeholderTextColor={textInputColor}
-        value={value}
-        onChangeText={(text) => setValue(text)}
+        value={rest.value ? rest.value: value}
+        onChangeText={handleChangeText}
         editable={editable}
         onFocus={() => setValueIsFocused(true)}
         onBlur={() => setValueIsFocused(false)}
+        {...rest}
       />
     </View>
   );

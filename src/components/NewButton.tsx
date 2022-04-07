@@ -8,7 +8,7 @@ interface Props extends PressableProps {
 function NewButton(props: Props) {
   const { text } = props;
   return (
-    <Pressable {...props}>
+    <Pressable accessibilityRole="button" {...props}>
       <Text>{text}</Text>
     </Pressable>
   );
