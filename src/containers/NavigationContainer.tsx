@@ -15,6 +15,7 @@ interface Props extends ViewProps {
   accessibilityLabel: string; // text to be screenread when View is selected
   menuTitle?: string; // optional title to display over menu
   withUrlHint?: true; // optional boolean if accessibility hints are desired for children
+  // Styling?: StyleSheet;
 }
 
 function NavigationContainer(props: Props) {
