@@ -1,10 +1,15 @@
-import { PressableProps, Pressable, Text } from 'react-native';
-import React from 'react';
+import { PressableProps, Pressable, Text } from "react-native";
+import React from "react";
 
-function NewButton(props: PressableProps) {
+interface Props extends PressableProps {
+  text?: string
+}
+
+function NewButton(props: Props) {
+  const { text } = props;
   return (
     <Pressable {...props}>
-      <Text> NewButton (Pressable Text in View) </Text>
+      <Text>{text}</Text>
     </Pressable>
   );
 }
