@@ -18,7 +18,7 @@ interface Props extends ViewProps {
   // Styling?: StyleSheet;
 }
 
-function NavigationContainer(props: Props) {
+function NavigationMenu(props: Props) {
   const { externalUrls, withUrlHint, menuTitle, accessibilityLabel } = props;
   const urls = [];
   for (let i = 0; i < externalUrls.length; i += 1) {
@@ -46,4 +46,4 @@ function NavigationContainer(props: Props) {
   );
 }
 
-export default NavigationContainer;
+export default NavigationMenu;
