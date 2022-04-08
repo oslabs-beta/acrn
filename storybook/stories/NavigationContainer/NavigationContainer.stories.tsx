@@ -1,8 +1,9 @@
 import { storiesOf } from "@storybook/react-native";
 import React from "react";
 import CenterView from "../CenterView";
-import NavigationContainer from "../../../src/containers/NavigationContainer";
+import NavigationMenu from "../../../src/containers/NavigationContainer";
 import { Url } from "../../../src/components/ExternalUrl";
+import { Styling } from "../../../src/styles/GeneralViewStyles";
 
 const urls: Url[] = [
   ["React Native Docs", "https://reactnative.dev/"],
@@ -19,10 +20,12 @@ const urls: Url[] = [
 storiesOf("NavigationContainer", module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add("Navigation Container", () => (
-    <NavigationContainer
-      externalUrls={urls}
-      accessibilityLabel="React Native Documentation Links"
-      menuTitle="Navigation Container"
-      withUrlHint
-    />
+    <Styling backgroundColor="red">
+      <NavigationMenu
+        externalUrls={urls}
+        accessibilityLabel="React Native Documentation Links"
+        menuTitle="Navigation Container"
+        withUrlHint
+      />
+    </Styling>
   ));

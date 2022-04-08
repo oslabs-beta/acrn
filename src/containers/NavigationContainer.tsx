@@ -15,9 +15,10 @@ interface Props extends ViewProps {
   accessibilityLabel: string; // text to be screenread when View is selected
   menuTitle?: string; // optional title to display over menu
   withUrlHint?: true; // optional boolean if accessibility hints are desired for children
+  // Styling?: StyleSheet;
 }
 
-function NavigationContainer(props: Props) {
+function NavigationMenu(props: Props) {
   const { externalUrls, withUrlHint, menuTitle, accessibilityLabel } = props;
   const urls = [];
   for (let i = 0; i < externalUrls.length; i += 1) {
@@ -45,4 +46,4 @@ function NavigationContainer(props: Props) {
   );
 }
 
-export default NavigationContainer;
+export default NavigationMenu;
