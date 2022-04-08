@@ -39,7 +39,7 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "@babel/core": "^7.17.0",
+    "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.10.3",
     "@callstack/eslint-config": "^9.0.0",
     "@react-navigation/native": "^6.0.10",
