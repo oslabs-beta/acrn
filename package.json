@@ -17,11 +17,12 @@
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
   "source": "src/index.tsx",
-  "react-native": "src/index.js",
+  "react-native": "src/index.tsx",
+  "types": "lib/typescript/index.d.ts",
   "files": [
     "src",
     "lib",
-    "babel.config.js"
+    "babel.js"
   ],
   "scripts": {
     "android": "expo start --android",
@@ -45,17 +46,21 @@
     "@react-navigation/native-stack": "^6.6.1",
     "@storybook/addon-actions": "^5.3",
     "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-interactions": "^6.4.20",
     "@storybook/addon-links": "^5.3",
     "@storybook/addon-ondevice-actions": "^5.3.23",
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
+    "@storybook/testing-library": "^0.0.9",
+    "@storybook/react": "^6.4.20",
     "@types/color": "^3.0.0",
     "@types/jest": "^24.0.13",
     "@types/node": "^13.1.0",
     "@types/react": "~17.0.21",
     "@types/react-dom": "^16.8.4",
-    "@types/react-native": "~0.64.12",
+    "@types/react-native": "^0.66.1",
     "@types/react-native-vector-icons": "^6.4.1",
     "@typescript-eslint/eslint-plugin": "^5.9.0",
     "@typescript-eslint/parser": "^5.9.0",
@@ -93,11 +98,16 @@
     "output": "lib",
     "targets": [
       "commonjs",
-      "module"
+      "module",
+      [
+        "typescript",
+        {
+          "project": "tsconfig.build.json"
+        }
+      ]
+    ],
+    "files": [
+      "src/"
     ]
-  },
-  "eslintIgnore": [
-    "node_modules/",
-    "lib/"
-  ]
+  }
 }
