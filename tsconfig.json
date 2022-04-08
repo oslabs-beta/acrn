@@ -2,7 +2,9 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "acrn": ["./src/index"]
+      "acrn": [
+        "./src/index"
+      ]
     },
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
@@ -10,7 +12,10 @@
     "forceConsistentCasingInFileNames": true,
     "importsNotUsedAsValues": "error",
     "jsx": "react",
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -24,5 +29,8 @@
     "strict": true,
     "target": "esnext"
   },
-  "exclude": ["lib/**/*"]
+  "exclude": [
+    "lib/**/*"
+  ],
+  "extends": "expo/tsconfig.base"
 }

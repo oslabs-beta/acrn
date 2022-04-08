@@ -17,11 +17,11 @@
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
   "source": "src/index.tsx",
-  "react-native": "src/index.tsx",
+  "react-native": "src/index.js",
   "files": [
     "src",
     "lib",
-    "babel.js"
+    "babel.config.js"
   ],
   "scripts": {
     "android": "expo start --android",
@@ -50,8 +50,8 @@
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/react-native": "^5.3.25",
     "@storybook/react-native-server": "^5.3.23",
-    "@types/jest": "^24.0.13",
     "@types/color": "^3.0.0",
+    "@types/jest": "^24.0.13",
     "@types/node": "^13.1.0",
     "@types/react": "~17.0.21",
     "@types/react-dom": "^16.8.4",
@@ -93,16 +93,11 @@
     "output": "lib",
     "targets": [
       "commonjs",
-      "module",
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ],
-    "files": [
-      "src/"
+      "module"
     ]
-  }
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }
