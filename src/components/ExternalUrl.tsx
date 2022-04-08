@@ -1,5 +1,5 @@
-import React from 'react';
-import { Pressable, PressableProps, Text, Linking, Alert } from 'react-native';
+import React from "react";
+import { Pressable, PressableProps, Text, Linking, Alert } from "react-native";
 
 // TODO: Move type decalarations to separate file
 
@@ -23,7 +23,7 @@ function ExternalUrl(props: Props) {
     <Pressable
       accessibilityRole="link"
       accessibilityLabel={url[0]}
-      accessibilityHint={withUrlHint ? `Navigates to ${url[1]}` : ''}
+      accessibilityHint={withUrlHint ? `Navigates to ${url[1]}` : ""}
       onPress={() => handlePress(url[1])}
     >
       <Text> {url[0]} </Text>
