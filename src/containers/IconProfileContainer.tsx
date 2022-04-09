@@ -1,5 +1,5 @@
 import React from 'react';
-import { Pressable, PressableProps, Text, Linking, Alert } from 'react-native';
+import { Pressable, PressableProps, Linking, Alert } from 'react-native';
 import Profile from '../components/Profile';
 import NewButton from '../components/NewButton';
 
