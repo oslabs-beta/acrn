@@ -7,10 +7,7 @@
     "forceConsistentCasingInFileNames": true,
     "importsNotUsedAsValues": "error",
     "jsx": "react",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
@@ -24,8 +21,6 @@
     "strict": true,
     "target": "esnext"
   },
-  "exclude": [
-    "lib/**/*"
-  ],
+  "exclude": ["lib/**/*", "node_modules/**/*"],
   "extends": "expo/tsconfig.base"
 }
