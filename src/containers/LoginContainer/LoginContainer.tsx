@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import AccessibleTextInput from '../components/AccessibleTextInput';
-import NewButton from '../components/NewButton';
+import AccessibleTextInput from '../../components/AccessibleTextInput/AccessibleTextInput';
+import NewButton from '../../components/NewButton/NewButton';
 
 // TODO: Style butttons
 // TODO: Make NewButton text editable via props

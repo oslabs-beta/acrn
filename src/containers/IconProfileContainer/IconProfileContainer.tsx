@@ -1,7 +1,7 @@
 import React from 'react';
 import { Pressable, PressableProps, Linking, Alert } from 'react-native';
-import Profile from '../components/Profile';
-import NewButton from '../components/NewButton';
+import Profile from '../../components/Profile/Profile';
+import NewButton from '../../components/NewButton/NewButton';
 
 interface Props extends PressableProps {
   uri: string;
