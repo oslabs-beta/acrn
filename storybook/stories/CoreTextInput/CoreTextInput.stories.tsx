@@ -4,13 +4,12 @@ import CenterView from '../CenterView';
 import { StyleSheet } from 'react-native';
 import CoreTextInput from '../../../src/components/core/CoreTextInput';
 
-
 const testStyle = StyleSheet.create({
   input: {
     color: 'orange',
   },
   label: {
-    color: 'orange'
+    color: 'orange',
   },
 });
 

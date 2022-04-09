@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import CenterView from '../CenterView';
 import NavigationMenu from '../../../src/containers/NavigationContainer';
-import { Url } from '../../../src/components/ExternalUrl';
+import type { Url } from '../../../src/components/ExternalUrl';
 import { Styling } from '../../../src/styles/GeneralViewStyles';
 
 const urls: Url[] = [
