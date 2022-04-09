@@ -1,7 +1,7 @@
 import React, { useDebugValue, useEffect, useRef, useState } from 'react';
 import { View, Alert } from 'react-native';
-import CoreTextInput from '../components/core/CoreTextInput';
-import NewButton from '../components/NewButton/NewButton';
+import CoreTextInput from '../../components/core/CoreTextInput';
+import NewButton from '../../components/NewButton/NewButton';
 
 /**
  * Allow user to enter in:
