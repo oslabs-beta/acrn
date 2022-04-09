@@ -14,7 +14,7 @@ import NewButton from '../components/NewButton';
 
 function CreateAccount() {
   // const passwordRef = useRef(null);
-  const emailRef: any = useRef(null); // ! Any type needed to avoid tsc error
+  const emailRef: any = useRef(null); // TODO replace 'any' type needed to avoid tsc error
   const passwordRef = useRef(null);
   const [username, setUsername] = useState('');
 
