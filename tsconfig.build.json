@@ -22,5 +22,10 @@
     "strict": true,
     "target": "esnext"
   },
-  "exclude": ["lib/**/*", "src/styles/GeneralViewStyles.tsx"]
+  "exclude": [
+    "lib/**/*",
+    "src/styles/GeneralViewStyles.tsx",
+    "src/containers/CreateAccount/CreateAccount.tsx",
+    "src/**/**/__tests__"
+  ]
 }
