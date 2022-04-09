@@ -34,7 +34,7 @@
     "start": "expo start",
     "storybook": "start-storybook -p 7007",
     "test": "jest",
-    "typescript": "tsc --noEmit",
+    "tsc": "tsc --noEmit",
     "web": "expo start --web"
   },
   "dependencies": {},
