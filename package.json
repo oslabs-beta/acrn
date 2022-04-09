@@ -105,9 +105,6 @@
           "project": "tsconfig.build.json"
         }
       ]
-    ],
-    "files": [
-      "src/"
     ]
   }
 }
