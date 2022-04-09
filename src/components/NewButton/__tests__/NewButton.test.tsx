@@ -4,14 +4,14 @@ import { render } from '@testing-library/react-native';
 
 describe('Accessible Text Input', () => {
   // let button: RenderAPI | ReactTestInstance;
-  // const props ={
-  //   text: 'New Button'
-  // }
+  const props = {
+    text: 'New Button',
+  };
   // beforeEach(() => {
   //   button = render(<NewButton {...props} />);
   // })
   test('renders input text', () => {
-    const { getByText } = render(<NewButton text={'New Button'} />);
+    const { getByText } = render(<NewButton {...props} />);
     expect(getByText('New Button')).toBeTruthy();
   });
   // xtest('button is pressable', () => {
