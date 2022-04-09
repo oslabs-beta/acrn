@@ -1,7 +1,7 @@
-import React from "react";
-import { View, ViewProps, Text } from "react-native";
-import ExternalUrl from "../components/ExternalUrl";
-import { Url } from "../components/ExternalUrl";
+import React from 'react';
+import { View, ViewProps, Text } from 'react-native';
+import ExternalUrl from '../components/ExternalUrl';
+import type { Url } from '../components/ExternalUrl';
 
 // TODO: Create InternalLink Component
 

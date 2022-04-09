@@ -1,10 +1,12 @@
-import React from "react";
-import { ImageProps, Image, Pressable, PressableProps } from "react-native";
+import React from 'react';
+import { ImageProps, Image, Pressable, PressableProps } from 'react-native';
 
-type PressableWithoutStyleProps = Omit<PressableProps, "style">;
+type PressableWithoutStyleProps = Omit<PressableProps, 'style'>;
 interface ProfileProps extends ImageProps, PressableWithoutStyleProps {
   height: number;
   width: number;
+  withUrlHint?: true;
+  profileLabel?: string;
   callback?: () => any;
 }
 

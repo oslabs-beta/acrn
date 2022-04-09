@@ -14,7 +14,7 @@ function AccessibleTextInput(props: Props) {
   const { setCredentialsAreSubmittable } = props;
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [editable, setEditable] = useState(true);
+  const [editable] = useState(true);
   const [usernameIsFocused, setUsernameIsFocused] = useState(false);
   const [passwordIsFocused, setPasswordIsFocused] = useState(false);
   const textInputColor = editable

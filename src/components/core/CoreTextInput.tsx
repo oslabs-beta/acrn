@@ -1,17 +1,13 @@
 /* eslint-disable react/require-default-props */
-import React, { createRef, useEffect, useState, useRef, forwardRef, } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TextInput,
   View,
   Text,
-  TextStyle,
-  StyleProp,
   StyleSheet,
   TextInputProps,
   TextProps,
-  AccessibilityProps
 } from 'react-native';
-
 
 // TODO: if we have time, pull out default styles to keep code DRY
 const editableTextInputColor = '#494949';
@@ -19,7 +15,7 @@ const disabledTextInputColor = '#BBB';
 const focusedInputColor = 'blue';
 const minimumTouchableSize = 48;
 
-interface Props extends TextInputProps , TextProps {
+interface Props extends TextInputProps, TextProps {
   /** Pass along stylesheet in props */
   //TODO: CHANGE STYLE TYPE FOR A STYLESHEET.CREATE StyleProp<TextStyle>
   /** Pass along label and placeholder props for input */
@@ -30,82 +26,85 @@ interface Props extends TextInputProps , TextProps {
   style?: any;
 }
 
-
 const CoreTextInput = React.forwardRef<TextInput, Props>(
- ({labelText = 'Label Placeholder', 
-  placeholderText = 'Placeholder',
-  accessibilityLabel = 'Accessible Text Input',
-  // changeEditable = true,
-  style,
-  ...rest}: Props, ref) => {
-  
-  const [value, setValue] = useState('');
-  /** We allow user to disable text input (can be useful because disabled
-   * text inputs don't get submitted) */
-  const [editable, setEditable] = useState(true);
-  const [valueIsFocused, setValueIsFocused] = useState(false);
-  const textInputColor = editable
-    ? editableTextInputColor
-    : disabledTextInputColor;
-  const accessibilityState = { disabled: !editable };
+  (
+    {
+      labelText = 'Label Placeholder',
+      placeholderText = 'Placeholder',
+      accessibilityLabel = 'Accessible Text Input',
+      // changeEditable = true,
+      style,
+      ...rest
+    }: Props,
+    ref
+  ) => {
+    const [value, setValue] = useState('');
+    /** We allow user to disable text input (can be useful because disabled
+     * text inputs don't get submitted) */
+    const [editable, setEditable] = useState(true);
+    const [valueIsFocused, setValueIsFocused] = useState(false);
+    const textInputColor = editable
+      ? editableTextInputColor
+      : disabledTextInputColor;
+    const accessibilityState = { disabled: !editable };
 
-  useEffect(() => {
-    if (rest.editable === false) {
-      setEditable(false)
-    }
-  }, [])
-  
+    useEffect(() => {
+      if (rest.editable === false) {
+        setEditable(false);
+      }
+    }, []);
 
-  /** Default Stylesheet */
-  const defaultStyle = StyleSheet.create({
-    label: {
-      color: valueIsFocused ? focusedInputColor : textInputColor,
-    },
-    input: {
-      backgroundColor: '#FFF',
-      padding: 8,
-      height: minimumTouchableSize,
-      minWidth: 150,
-      borderColor: valueIsFocused ? focusedInputColor : textInputColor,
-      borderWidth: valueIsFocused ? 2 : 1,
-      borderRadius: 4,
-      marginTop: 8,
-    },
-  });
+    /** Default Stylesheet */
+    const defaultStyle = StyleSheet.create({
+      label: {
+        color: valueIsFocused ? focusedInputColor : textInputColor,
+      },
+      input: {
+        backgroundColor: '#FFF',
+        padding: 8,
+        height: minimumTouchableSize,
+        minWidth: 150,
+        borderColor: valueIsFocused ? focusedInputColor : textInputColor,
+        borderWidth: valueIsFocused ? 2 : 1,
+        borderRadius: 4,
+        marginTop: 8,
+      },
+    });
 
+    const handleChangeText = (text: string) => {
+      if (!editable) {
+        return;
+      }
+      setValue(text);
+      rest.onChangeText?.(text);
+    };
 
-  const handleChangeText = (text: string) => {
-    if (!editable) {
-      return;
-    }
-    setValue(text);
-    rest.onChangeText?.(text);
-  };
-  
-  return (
-    <View
-      
-      accessible
-      accessibilityLabel= {accessibilityLabel}
-      accessibilityState={accessibilityState}
-    >
-      <Text style = {style ? ([defaultStyle.label, style.label]):defaultStyle.label}>
-        {labelText}
-      </Text>
-      <TextInput 
-        ref={ref}
-        style = {style ? ([defaultStyle.input, style.input]): defaultStyle.input}
-        placeholder={rest.placeholder ? rest.placeholder: placeholderText}
-        placeholderTextColor={textInputColor}
-        value={rest.value ? rest.value: value}
-        onChangeText={handleChangeText}
-        editable={editable}
-        onFocus={() => setValueIsFocused(true)}
-        onBlur={() => setValueIsFocused(false)}
-        {...rest}
-      />
-    </View>
-  );
-})
+    return (
+      <View
+        accessible
+        accessibilityLabel={accessibilityLabel}
+        accessibilityState={accessibilityState}
+      >
+        <Text
+          style={style ? [defaultStyle.label, style.label] : defaultStyle.label}
+        >
+          {labelText}
+        </Text>
+        <TextInput
+          ref={ref}
+          style={style ? [defaultStyle.input, style.input] : defaultStyle.input}
+          placeholder={rest.placeholder ? rest.placeholder : placeholderText}
+          placeholderTextColor={textInputColor}
+          value={rest.value ? rest.value : value}
+          onChangeText={handleChangeText}
+          editable={editable}
+          onFocus={() => setValueIsFocused(true)}
+          onBlur={() => setValueIsFocused(false)}
+          {...rest}
+        />
+      </View>
+    );
+  }
+);
 
 export default CoreTextInput;

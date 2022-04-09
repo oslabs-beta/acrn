@@ -1,5 +1,5 @@
-import React, { useDebugValue, useEffect, useRef, useState } from 'react';
-import {View, Alert} from 'react-native'
+import React, { useEffect, useRef, useState } from 'react';
+import { View, Alert } from 'react-native';
 import CoreTextInput from '../components/core/CoreTextInput';
 import NewButton from '../components/NewButton';
 
@@ -14,39 +14,57 @@ import NewButton from '../components/NewButton';
 
 function CreateAccount() {
   // const passwordRef = useRef(null);
-  const emailRef = useRef(null);
-  const passwordRef = useRef(null)
+  const emailRef: any = useRef(null); // TODO replace 'any' type needed to avoid tsc error
+  const passwordRef = useRef(null);
   const [username, setUsername] = useState('');
 
   // console.log('emailref', emailRef)c
   // emailRef.current.username = 'test'
   useEffect(() => {
-    emailRef.current.focus()
-  }, [])
+    emailRef.current.focus();
+  }, []);
 
-
-  
   // console.log('emailref current viewconfig valid attributes', emailRef.current.viewConfig.validAttributes);
-  return(
+  return (
     <View>
-      <CoreTextInput ref={emailRef} value={username} onChangeText = {(text) => setUsername(text)} labelText = 'Email' placeholder='John@apple.com'/>
-      <CoreTextInput ref={passwordRef} labelText = 'Full Name' placeholder='John Appleseed'/>
-      <CoreTextInput ref={passwordRef} labelText = 'Username' placeholder='JohnApp'/>
-      <CoreTextInput ref={passwordRef} labelText = 'Password' placeholder='Password' secureTextEntry={true}/>
-      <NewButton text = 'Submit' onLongPress={() =>   Alert.alert(
-      "Alert Title",
-      "My Alert Msg",
-      [
-        {
-          text: "Cancel",
-          onPress: () => console.log("Cancel Pressed"),
-          style: "cancel"
-        },
-        { text: "OK", onPress: () => console.log("OK Pressed") }
-      ]
-    )} />
+      <CoreTextInput
+        ref={emailRef}
+        value={username}
+        onChangeText={(text) => setUsername(text)}
+        labelText="Email"
+        placeholder="John@apple.com"
+      />
+      <CoreTextInput
+        ref={passwordRef}
+        labelText="Full Name"
+        placeholder="John Appleseed"
+      />
+      <CoreTextInput
+        ref={passwordRef}
+        labelText="Username"
+        placeholder="JohnApp"
+      />
+      <CoreTextInput
+        ref={passwordRef}
+        labelText="Password"
+        placeholder="Password"
+        secureTextEntry={true}
+      />
+      <NewButton
+        text="Submit"
+        onLongPress={() =>
+          Alert.alert('Alert Title', 'My Alert Msg', [
+            {
+              text: 'Cancel',
+              onPress: () => console.log('Cancel Pressed'),
+              style: 'cancel',
+            },
+            { text: 'OK', onPress: () => console.log('OK Pressed') },
+          ])
+        }
+      />
     </View>
-  )
+  );
 }
 
 export default CreateAccount;

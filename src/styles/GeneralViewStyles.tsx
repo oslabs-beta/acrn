@@ -1,5 +1,5 @@
-import React from "react";
-import { View } from "react-native";
+import React from 'react';
+import { View } from 'react-native';
 
 interface CustomStyle {
   flex?: number;
@@ -8,6 +8,9 @@ interface CustomStyle {
 
 export const Styling: React.FC<CustomStyle> = ({ children, ...props }) => {
   const { flex, backgroundColor } = props;
+
+  //TODO Fix tsc errors and remove from tsconfig.build.ignore
+
   return (
     <View
       style={{
