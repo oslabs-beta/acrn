@@ -26,6 +26,7 @@
     "lib/**/*",
     "src/styles/GeneralViewStyles.tsx",
     "src/containers/CreateAccount/CreateAccount.tsx",
+    "src/components/NewButton/NewButtonWIP.tsx",
     "src/**/**/__tests__"
   ]
 }
