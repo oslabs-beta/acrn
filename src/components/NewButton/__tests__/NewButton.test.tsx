@@ -1,8 +1,6 @@
 import React from 'react';
 import NewButton from '../NewButton';
-import { render, fireEvent, RenderAPI } from '@testing-library/react-native';
-import type { ReactTestInstance } from 'react-test-renderer';
-import renderer from 'react-test-renderer';
+import { render, fireEvent } from '@testing-library/react-native';
 
 describe('Accessible Text Input', () => {
   let button: any;
