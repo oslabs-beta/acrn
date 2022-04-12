@@ -2,6 +2,75 @@
 
 exports[` 1`] = `undefined`;
 
+exports[`Accessible NewButton accessibility role is button 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  text="New Button"
+>
+  <Text>
+    New Button
+  </Text>
+</View>
+`;
+
+exports[`Accessible NewButton button is pressable 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  text="New Button"
+>
+  <Text>
+    New Button
+  </Text>
+</View>
+`;
+
+exports[`Accessible NewButton renders input text 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  text="New Button"
+>
+  <Text>
+    New Button
+  </Text>
+</View>
+`;
+
 exports[`Accessible Text Input accessibility role is button 1`] = `
 <View
   accessibilityRole="button"
