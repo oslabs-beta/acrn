@@ -9,9 +9,7 @@ interface Props extends ViewProps {
 }
 
 /**
- * AccessibleTextInput can be used to toggle accessibility state.
- * Given the two text inputs in AccessibleTextInput, focus can be changed/alternated depending on state.
- *
+ * AccessibleTextInput can be used to toggle accessibility state between two text inputs
  *
  * ## Usage
  * ```js
