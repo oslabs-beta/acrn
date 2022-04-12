@@ -14,17 +14,15 @@ import NewButton from '../../components/NewButton/NewButton';
 
 function CreateAccount() {
   // const passwordRef = useRef(null);
-  const emailRef = useRef(null);
+  const emailRef = useRef<any>(null);
   const passwordRef = useRef(null);
   const [username, setUsername] = useState('');
 
-  // console.log('emailref', emailRef)c
-  // emailRef.current.username = 'test'
+  
   useEffect(() => {
     emailRef.current.focus();
   }, []);
 
-  // console.log('emailref current viewconfig valid attributes', emailRef.current.viewConfig.validAttributes);
   return (
     <View>
       <CoreTextInput
