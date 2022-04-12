@@ -2,8 +2,27 @@ import React, { useState, useEffect } from 'react';
 import { TextInput, View, Text, StyleSheet, ViewProps } from 'react-native';
 
 interface Props extends ViewProps {
+  /**
+   * Function that toggles state of credentials
+   */
   setCredentialsAreSubmittable?: (bool: boolean) => void;
 }
+
+/**
+ * AccessibleTextInput can be used to toggle accessibility state between two text inputs
+ *
+ * ## Usage
+ * ```js
+ * import * as React from 'react';
+ * import { AccessibleTextInput, LoginContainer } from 'acrn-rn';
+ *
+ * const [credentialsAreSubmittable, setCredentialsAreSubmittable] = useState(false);
+ *
+ * const MyComponent = () => (
+ * <AccessibleTextInput
+ *   setCredentialsAreSubmittable={(bool) => setCredentialsAreSubmittable(bool)}/>
+ * );
+ */
 
 const editableTextInputColor = '#494949';
 const disabledTextInputColor = '#BBB';
