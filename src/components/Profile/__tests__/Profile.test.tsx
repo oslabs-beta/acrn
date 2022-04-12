@@ -1,16 +1,25 @@
 import React from 'react';
 import Profile from '../Profile';
 import { render, fireEvent } from '@testing-library/react-native';
+import { Image } from 'react-native';
+import TestRenderer from 'react-test-renderer';
 
 describe('Profile test', () => {
   let profile: any;
+  let profileRoot: any;
   const props = {
     height: 100,
     width: 100,
   };
   beforeEach(() => {
-    profile = render(<Profile source={0} {...props} />);
-    expect(profile).toMatchSnapshot();
+    profile = TestRenderer.create(<Profile source={0} {...props} />);
+    profileRoot = profile.root;
+    expect(profile.toJSON()).toMatchSnapshot();
   });
-  xtest('placeholder', () => {});
+  test('placeholder', () => {
+    expect(profileRoot.findByType(Image).props.style).toMatchObject({
+      height: 100,
+      width: 100,
+    });
+  });
 });
