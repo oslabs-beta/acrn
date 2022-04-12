@@ -6,9 +6,34 @@ import { Pressable, PressableProps, Text, Linking, Alert } from 'react-native';
 export type Url = [a: string, b: string]; // [0] -> Page Name: Will be rendered in <Text/>, [1] -> url: read in accessibilitHint
 
 interface Props extends PressableProps {
+  /**
+   * array containing descriptive name and url
+   */
   url: Url;
-  withUrlHint?: boolean; // if true, URL will be screenread via accessibilityHint
+  /**
+   * if true, URL will be screenread via accessibilityHint
+   */
+  withUrlHint?: boolean;
 }
+
+/**
+ * A component to show a single url item inside a navigation menu *
+ *
+ * ## Usage
+ * ```js
+ * import React from 'react';
+ * import { Pressable, PressableProps, Text, Linking, Alert } from 'react-native';
+ * import { ExternalUrl } from 'acrn-rn';
+ *
+ * const [credentialsAreSubmittable, setCredentialsAreSubmittable] = useState(false);
+ *
+ * const MyComponent = () => (
+ * <ExternalUrl
+ *   url={['React Native Docs', 'https://reactnative.dev/']}
+ *   withUrlHint={true}
+ *  />
+ * )
+ */
 
 const handlePress = async (url: string): Promise<any> => {
   const supported = await Linking.canOpenURL(url);
