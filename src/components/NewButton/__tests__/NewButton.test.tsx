@@ -2,7 +2,7 @@ import React from 'react';
 import NewButton from '../NewButton';
 import { render, fireEvent } from '@testing-library/react-native';
 
-describe('Accessible Text Input', () => {
+describe('Accessible NewButton', () => {
   let button: any;
   const onPress = jest.fn();
   const props = {
