@@ -1,22 +1,22 @@
 import React from 'react';
 import NewButton from '../NewButton';
-import { render } from '@testing-library/react-native';
+import { render, fireEvent } from '@testing-library/react-native';
 
 describe('Accessible Text Input', () => {
-  // let button: RenderAPI | ReactTestInstance;
+  let button: any;
+  const onPress = jest.fn();
   const props = {
     text: 'New Button',
   };
-  // beforeEach(() => {
-  //   button = render(<NewButton {...props} />);
-  // })
-  test('renders input text', () => {
-    const { getByText } = render(<NewButton {...props} />);
-    expect(getByText('New Button')).toBeTruthy();
+  beforeEach(() => {
+    button = render(<NewButton {...props} onPress={onPress} />);
+    expect(button).toMatchSnapshot();
   });
-  // xtest('button is pressable', () => {
-  //   const onClick = jest.fn();
-  //   fireEvent(button, onClick);
-  //   fireEvent;
-  // });
+  test('renders input text', () => {
+    expect(button.getByText('New Button')).toBeTruthy();
+  });
+  test('button is pressable', () => {
+    fireEvent.press(button.getByText('New Button'));
+    expect(onPress).toHaveBeenCalled();
+  });
 });
