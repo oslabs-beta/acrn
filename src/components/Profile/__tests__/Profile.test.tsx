@@ -1,6 +1,5 @@
 import React from 'react';
 import Profile from '../Profile';
-import { render, fireEvent } from '@testing-library/react-native';
 import { Image } from 'react-native';
 import TestRenderer from 'react-test-renderer';
 
