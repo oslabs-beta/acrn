@@ -19,4 +19,7 @@ describe('Accessible Text Input', () => {
     fireEvent.press(button.getByText('New Button'));
     expect(onPress).toHaveBeenCalled();
   });
+  test('accessibility role is button', () => {
+    expect(button.getByRole('button')).toBeTruthy();
+  });
 });
