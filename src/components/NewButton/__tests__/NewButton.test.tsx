@@ -2,7 +2,7 @@ import React from 'react';
 import NewButton from '../NewButton';
 import { render, fireEvent } from '@testing-library/react-native';
 
-describe('Accessible Text Input', () => {
+describe('Accessible NewButton', () => {
   let button: any;
   const onPress = jest.fn();
   const props = {
@@ -18,5 +18,8 @@ describe('Accessible Text Input', () => {
   test('button is pressable', () => {
     fireEvent.press(button.getByText('New Button'));
     expect(onPress).toHaveBeenCalled();
+  });
+  test('accessibility role is button', () => {
+    expect(button.getByRole('button')).toBeTruthy();
   });
 });
