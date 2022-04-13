@@ -15,11 +15,27 @@ interface Props extends ViewProps {
   accessibilityLabel: string; // text to be screenread when View is selected
   menuTitle?: string; // optional title to display over menu
   withUrlHint?: true; // optional boolean if accessibility hints are desired for children
-  // Styling?: StyleSheet;
+  itemFlex?: number;
+  itemBackgroundColor?: string;
+  itemBorderRadius?: number;
+  itemBorderColor?: string;
+  itemPadding?: number;
+  itemMargin?: number;
 }
 
 function NavigationMenu(props: Props) {
-  const { externalUrls, withUrlHint, menuTitle, accessibilityLabel } = props;
+  const {
+    externalUrls,
+    withUrlHint,
+    menuTitle,
+    accessibilityLabel,
+    itemFlex,
+    itemBackgroundColor,
+    itemBorderRadius,
+    itemBorderColor,
+    itemPadding,
+    itemMargin,
+  } = props;
   const urls = [];
   for (let i = 0; i < externalUrls.length; i += 1) {
     urls.push(
@@ -27,6 +43,12 @@ function NavigationMenu(props: Props) {
         key={`url ${i}`}
         url={externalUrls[i]}
         withUrlHint={withUrlHint}
+        itemFlex={itemFlex}
+        itemBackgroundColor={itemBackgroundColor}
+        itemBorderRadius={itemBorderRadius}
+        itemBorderColor={itemBorderColor}
+        itemPadding={itemPadding}
+        itemMargin={itemMargin}
       />
     );
   }
