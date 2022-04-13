@@ -26,7 +26,8 @@ interface Props extends PressableProps {
  *    onLongPress={() => console.log('onLongPress')}/>
  * )
  */
-
+const backgroundColor = 'blue';
+const textColor = 'white';
 const defaultButtonStyle = StyleSheet.create({
   pressable: {
     alignItems: 'center',
@@ -35,12 +36,12 @@ const defaultButtonStyle = StyleSheet.create({
     elevation: 4,
     paddingVertical: 12,
     paddingHorizontal: 32,
-    backgroundColor: 'blue',
+    backgroundColor: backgroundColor,
     marginVertical: 5,
   },
   text: {
     fontWeight: 'bold',
-    color: 'white',
+    color: textColor,
     fontSize: 14,
   },
 });

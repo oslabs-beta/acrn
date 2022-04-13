@@ -1,12 +1,15 @@
+/* eslint-disable jest/no-disabled-tests */
 import React from 'react';
 import ExternalUrl from '../ExternalUrl';
 import { render, fireEvent } from '@testing-library/react-native';
+import type { Url } from '../ExternalUrl';
 
 xdescribe('Accessible NewButton', () => {
   let button: any;
   const onPress = jest.fn();
+  const url: Url = ['hello', 'website'];
   const props = {
-    url: ['hello', 'website'],
+    url: url,
   };
   beforeEach(() => {
     button = render(<ExternalUrl url={props.url} />);
