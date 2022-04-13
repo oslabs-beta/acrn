@@ -8,7 +8,7 @@ interface CustomStyle {
   padding?: number;
 }
 
-export const Styling: React.FC<CustomStyle> = ({ children, ...props }) => {
+const Styling: React.FC<CustomStyle> = ({ children, ...props }) => {
   const { flex, backgroundColor, borderRadius, padding } = props;
 
   return (
@@ -24,3 +24,5 @@ export const Styling: React.FC<CustomStyle> = ({ children, ...props }) => {
     </View>
   );
 };
+
+export default Styling;
