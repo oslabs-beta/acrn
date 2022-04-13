@@ -19,6 +19,7 @@ interface Props extends PressableProps {
   imageBorderColor?: string;
   imagePadding?: number;
   imageMargin?: number;
+  imageBorderWidth?: number;
 }
 
 const handlePress = async (url: string): Promise<any> => {
@@ -46,6 +47,7 @@ function IconProfileContainer(props: Props) {
     imageBorderColor,
     imagePadding,
     imageMargin,
+    imageBorderWidth,
   } = props;
   return (
     <Pressable
@@ -69,6 +71,7 @@ function IconProfileContainer(props: Props) {
         imageBorderColor={imageBorderColor}
         imagePadding={imagePadding}
         imageMargin={imageMargin}
+        imageBorderWidth={imageBorderWidth}
       />
       <NewButton
         text={buttonText}

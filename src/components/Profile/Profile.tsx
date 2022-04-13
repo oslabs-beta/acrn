@@ -14,6 +14,7 @@ interface ProfileProps extends ImageProps, PressableWithoutStyleProps {
   imageBorderColor?: string;
   imagePadding?: number;
   imageMargin?: number;
+  imageBorderWidth?: number;
 }
 
 function Profile(props: ProfileProps) {
@@ -28,6 +29,7 @@ function Profile(props: ProfileProps) {
     imageBorderColor,
     imagePadding,
     imageMargin,
+    imageBorderWidth,
   } = props;
   return (
     <Pressable
@@ -39,7 +41,7 @@ function Profile(props: ProfileProps) {
         borderColor: imageBorderColor,
         padding: imagePadding,
         margin: imageMargin,
-        borderWidth: 2,
+        borderWidth: imageBorderWidth,
       }}
     >
       <Image source={source} style={{ width, height }} />

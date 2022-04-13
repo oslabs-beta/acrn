@@ -20,5 +20,6 @@ storiesOf('IconProfile', module)
       imageMargin={5}
       imagePadding={5}
       imageBorderRadius={100}
+      imageBorderWidth={2}
     />
   ));
