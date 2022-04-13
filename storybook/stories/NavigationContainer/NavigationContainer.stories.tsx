@@ -32,6 +32,7 @@ storiesOf('NavigationContainer', module)
         itemBorderColor="black"
         itemPadding={20}
         itemMargin={10}
+        itemBorderWidth={2}
       />
     </Styling>
   ));
