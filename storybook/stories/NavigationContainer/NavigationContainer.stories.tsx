@@ -20,12 +20,18 @@ const urls: Url[] = [
 storiesOf('NavigationContainer', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Navigation Container', () => (
-    <Styling backgroundColor="red">
+    <Styling backgroundColor="white" borderRadius={4} padding={10}>
       <NavigationMenu
         externalUrls={urls}
         accessibilityLabel="React Native Documentation Links"
         menuTitle="Navigation Container"
         withUrlHint
+        itemFlex={1}
+        itemBackgroundColor="white"
+        itemBorderRadius={4}
+        itemBorderColor="black"
+        itemPadding={20}
+        itemMargin={10}
       />
     </Styling>
   ));

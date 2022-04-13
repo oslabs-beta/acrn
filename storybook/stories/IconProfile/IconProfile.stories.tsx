@@ -14,5 +14,11 @@ storiesOf('IconProfile', module)
       padding={50}
       profileLabel="Ekans' Profile Picture"
       accessibilityHint="Tap to view Pokemon Profile"
+      imageFlex={1}
+      imageBackgroundColor="white"
+      imageBorderColor="black"
+      imageMargin={5}
+      imagePadding={5}
+      imageBorderRadius={100}
     />
   ));
