@@ -20,6 +20,7 @@ interface Props extends PressableProps {
   itemBorderColor?: string;
   itemPadding?: number;
   itemMargin?: number;
+  itemBorderWidth?: number;
 }
 
 /**
@@ -58,6 +59,7 @@ function ExternalUrl(props: Props) {
     itemBorderColor,
     itemPadding,
     itemMargin,
+    itemBorderWidth,
   } = props;
   return (
     <Pressable
@@ -72,7 +74,7 @@ function ExternalUrl(props: Props) {
         borderColor: itemBorderColor,
         padding: itemPadding,
         margin: itemMargin,
-        borderWidth: 2,
+        borderWidth: itemBorderWidth,
       }}
     >
       <Text> {url[0]} </Text>

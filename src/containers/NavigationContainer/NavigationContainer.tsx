@@ -21,6 +21,7 @@ interface Props extends ViewProps {
   itemBorderColor?: string;
   itemPadding?: number;
   itemMargin?: number;
+  itemBorderWidth?: number;
 }
 
 function NavigationMenu(props: Props) {
@@ -35,6 +36,7 @@ function NavigationMenu(props: Props) {
     itemBorderColor,
     itemPadding,
     itemMargin,
+    itemBorderWidth,
   } = props;
   const urls = [];
   for (let i = 0; i < externalUrls.length; i += 1) {
@@ -49,6 +51,7 @@ function NavigationMenu(props: Props) {
         itemBorderColor={itemBorderColor}
         itemPadding={itemPadding}
         itemMargin={itemMargin}
+        itemBorderWidth={itemBorderWidth}
       />
     );
   }
