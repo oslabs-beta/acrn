@@ -26,6 +26,7 @@ interface Props extends ViewProps {
 
 const editableTextInputColor = '#494949';
 const disabledTextInputColor = '#BBB';
+const backgroundColor = '#FFF';
 const focusedInputColor = 'green';
 const minimumTouchableSize = 48;
 
@@ -49,7 +50,7 @@ function AccessibleTextInput(props: Props) {
           : textInputColor,
     },
     input: {
-      backgroundColor: '#FFF',
+      backgroundColor: backgroundColor,
       padding: 8,
       height: minimumTouchableSize,
       width: '100%',
