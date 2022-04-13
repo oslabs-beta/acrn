@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import AccessibleTextInput from '../AccessibleTextInput';
 import renderer from 'react-test-renderer';
 
-xdescribe('Accessible Text Input', () => {
+describe('Accessible Text Input', () => {
   it('takes in a text input', () => {
+    // TODO: complete test
     const textInput = renderer.create(<AccessibleTextInput />);
+    console.log(textInput);
   });
 });

@@ -14,6 +14,7 @@ const editableTextInputColor = '#494949';
 const disabledTextInputColor = '#BBB';
 const focusedInputColor = 'blue';
 const minimumTouchableSize = 48;
+const backgroundColor = '#FFF';
 
 interface Props extends TextInputProps, TextProps {
   /** Pass along stylesheet in props */
@@ -52,7 +53,7 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
       if (rest.editable === false) {
         setEditable(false);
       }
-    }, []);
+    }, [rest.editable]);
 
     /** Default Stylesheet */
     const defaultStyle = StyleSheet.create({
@@ -60,7 +61,7 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
         color: valueIsFocused ? focusedInputColor : textInputColor,
       },
       input: {
-        backgroundColor: '#FFF',
+        backgroundColor: backgroundColor,
         padding: 8,
         height: minimumTouchableSize,
         minWidth: 150,
