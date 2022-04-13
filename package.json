@@ -28,6 +28,7 @@
     "android": "expo start --android",
     "build-storybook": "build-storybook",
     "eject": "expo eject",
+    "format": "prettier -w .",
     "ios": "expo start --ios",
     "lint": "eslint --ext '.js,.ts,.tsx' .",
     "prepare": "bob build",
