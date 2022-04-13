@@ -1,4 +1,4 @@
-import React, { useDebugValue, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { View, Alert } from 'react-native';
 import CoreTextInput from '../../components/CoreTextInput/CoreTextInput';
 import NewButton from '../../components/NewButton/NewButton';
