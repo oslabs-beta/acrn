@@ -13,6 +13,12 @@ interface Props extends PressableProps {
   innerFunc?: () => any;
   withUrlHint?: true;
   profileLabel?: string;
+  imageFlex?: number;
+  imageBackgroundColor?: string;
+  imageBorderRadius?: number;
+  imageBorderColor?: string;
+  imagePadding?: number;
+  imageMargin?: number;
 }
 
 const handlePress = async (url: string): Promise<any> => {
@@ -34,6 +40,12 @@ function IconProfileContainer(props: Props) {
     withUrlHint,
     profileLabel,
     accessibilityHint,
+    imageFlex,
+    imageBackgroundColor,
+    imageBorderRadius,
+    imageBorderColor,
+    imagePadding,
+    imageMargin,
   } = props;
   return (
     <Pressable
@@ -51,6 +63,12 @@ function IconProfileContainer(props: Props) {
         withUrlHint={withUrlHint}
         callback={innerFunc}
         profileLabel={profileLabel}
+        imageFlex={imageFlex}
+        imageBackgroundColor={imageBackgroundColor}
+        imageBorderRadius={imageBorderRadius}
+        imageBorderColor={imageBorderColor}
+        imagePadding={imagePadding}
+        imageMargin={imageMargin}
       />
       <NewButton
         text={buttonText}
