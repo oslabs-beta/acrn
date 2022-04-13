@@ -14,6 +14,12 @@ interface Props extends PressableProps {
    * if true, URL will be screenread via accessibilityHint
    */
   withUrlHint?: boolean;
+  itemFlex?: number;
+  itemBackgroundColor?: string;
+  itemBorderRadius?: number;
+  itemBorderColor?: string;
+  itemPadding?: number;
+  itemMargin?: number;
 }
 
 /**
@@ -43,13 +49,31 @@ const handlePress = async (url: string): Promise<any> => {
 };
 
 function ExternalUrl(props: Props) {
-  const { url, withUrlHint } = props;
+  const {
+    url,
+    withUrlHint,
+    itemFlex,
+    itemBackgroundColor,
+    itemBorderRadius,
+    itemBorderColor,
+    itemPadding,
+    itemMargin,
+  } = props;
   return (
     <Pressable
       accessibilityRole="link"
       accessibilityLabel={url[0]}
       accessibilityHint={withUrlHint ? `Navigates to ${url[1]}` : ''}
       onPress={() => handlePress(url[1])}
+      style={{
+        flex: itemFlex,
+        backgroundColor: itemBackgroundColor,
+        borderRadius: itemBorderRadius,
+        borderColor: itemBorderColor,
+        padding: itemPadding,
+        margin: itemMargin,
+        borderWidth: 2,
+      }}
     >
       <Text> {url[0]} </Text>
     </Pressable>
