@@ -2,7 +2,7 @@ import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import CenterView from '../CenterView';
 import { StyleSheet } from 'react-native';
-import CoreTextInput from '../../../src/components/core/CoreTextInput';
+import CoreTextInput from '../../../src/components/CoreTextInput/CoreTextInput';
 
 const testStyle = StyleSheet.create({
   input: {
