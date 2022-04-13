@@ -8,12 +8,40 @@ interface ProfileProps extends ImageProps, PressableWithoutStyleProps {
   withUrlHint?: true;
   profileLabel?: string;
   callback?: () => any;
+  imageFlex?: number;
+  imageBackgroundColor?: string;
+  imageBorderRadius?: number;
+  imageBorderColor?: string;
+  imagePadding?: number;
+  imageMargin?: number;
 }
 
 function Profile(props: ProfileProps) {
-  const { source, height, width, callback } = props;
+  const {
+    source,
+    height,
+    width,
+    callback,
+    imageFlex,
+    imageBackgroundColor,
+    imageBorderRadius,
+    imageBorderColor,
+    imagePadding,
+    imageMargin,
+  } = props;
   return (
-    <Pressable onPress={callback}>
+    <Pressable
+      onPress={callback}
+      style={{
+        flex: imageFlex,
+        backgroundColor: imageBackgroundColor,
+        borderRadius: imageBorderRadius,
+        borderColor: imageBorderColor,
+        padding: imagePadding,
+        margin: imageMargin,
+        borderWidth: 2,
+      }}
+    >
       <Image source={source} style={{ width, height }} />
     </Pressable>
   );
