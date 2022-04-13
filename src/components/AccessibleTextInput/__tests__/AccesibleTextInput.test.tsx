@@ -6,5 +6,6 @@ describe('Accessible Text Input', () => {
   it('takes in a text input', () => {
     // TODO: complete test
     const textInput = renderer.create(<AccessibleTextInput />);
+    console.log(textInput);
   });
 });
