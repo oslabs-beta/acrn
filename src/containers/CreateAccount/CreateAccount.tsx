@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, Alert } from 'react-native';
+import { View, ViewProps, Alert } from 'react-native';
 import CoreTextInput from '../../components/CoreTextInput/CoreTextInput';
 import NewButton from '../../components/NewButton/NewButton';
 
@@ -12,39 +12,46 @@ import NewButton from '../../components/NewButton/NewButton';
  * submit/signup button
  */
 
-function CreateAccount() {
+interface Props extends ViewProps {}
+
+function CreateAccount(props: Props) {
   // const passwordRef = useRef(null);
   const emailRef = useRef<any>(null);
   const passwordRef = useRef(null);
   const [username, setUsername] = useState('');
+
+  const { accessibilityLabel, accessibilityHint } = props;
 
   useEffect(() => {
     emailRef.current.focus();
   }, []);
 
   return (
-    <View>
+    <View
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}
+    >
       <CoreTextInput
         ref={emailRef}
         value={username}
         onChangeText={(text) => setUsername(text)}
         labelText="Email"
-        placeholder="John@apple.com"
+        placeholder="username@domain.com"
       />
       <CoreTextInput
         ref={passwordRef}
         labelText="Full Name"
-        placeholder="John Appleseed"
+        placeholder="Enter full name"
       />
       <CoreTextInput
         ref={passwordRef}
         labelText="Username"
-        placeholder="JohnApp"
+        placeholder="Enter username"
       />
       <CoreTextInput
         ref={passwordRef}
         labelText="Password"
-        placeholder="Password"
+        placeholder="Choose password"
         secureTextEntry={true}
       />
       <NewButton
