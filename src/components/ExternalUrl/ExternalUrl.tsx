@@ -1,8 +1,6 @@
 import React from 'react';
 import { Pressable, PressableProps, Text, Linking, Alert } from 'react-native';
 
-// TODO: Move type decalarations to separate file
-
 export type Url = [a: string, b: string]; // [0] -> Page Name: Will be rendered in <Text/>, [1] -> url: read in accessibilitHint
 
 interface Props extends PressableProps {
