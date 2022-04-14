@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 import ExternalUrl from '../../components/ExternalUrl/ExternalUrl';
 import type { Url } from '../../components/ExternalUrl/ExternalUrl';
-// TODO: Create InternalLink Component
 
 /*
  * example for url type
