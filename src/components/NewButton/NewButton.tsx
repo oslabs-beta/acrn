@@ -5,7 +5,8 @@ interface Props extends PressableProps {
   /**
    * text displayed inside button
    */
-  text?: string;
+  text: string;
+  accessibilityLabel?: string;
 }
 
 /**
@@ -26,7 +27,7 @@ interface Props extends PressableProps {
  *    onLongPress={() => console.log('onLongPress')}/>
  * )
  */
-const backgroundColor = 'blue';
+const backgroundColor = 'purple';
 const textColor = 'white';
 const defaultButtonStyle = StyleSheet.create({
   pressable: {
@@ -47,10 +48,11 @@ const defaultButtonStyle = StyleSheet.create({
 });
 
 function NewButton(props: Props) {
-  const { text } = props;
+  const { text, accessibilityLabel } = props;
   return (
     <Pressable
       accessibilityRole="button"
+      accessibilityLabel={accessibilityLabel || text}
       style={defaultButtonStyle.pressable}
       {...props}
     >
