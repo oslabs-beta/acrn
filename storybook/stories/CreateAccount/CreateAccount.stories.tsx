@@ -8,6 +8,6 @@ storiesOf('Create Account', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Create Account', () => (
     <Styling backgroundColor="#D3D3D3" borderRadius={4} padding={10}>
-      <CreateAccount accessibilityLabel="Create Account" />
+      <CreateAccount accessibilityLabel="Create an Account" />
     </Styling>
   ));
