@@ -7,7 +7,7 @@ import DefaultViewStyle from '../../../src/styles/DefaultViewStyle';
 storiesOf('Create Account', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Demo', () => (
-    <DefaultViewStyle backgroundColor="#D3D3D3" borderRadius={4} padding={10}>
+    <DefaultViewStyle  borderRadius={4} padding={10}>
       <CreateAccount accessibilityLabel="Create an Account" />
     </DefaultViewStyle>
   ));

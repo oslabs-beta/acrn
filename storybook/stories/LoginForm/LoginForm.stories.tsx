@@ -7,7 +7,7 @@ import DefaultViewStyle from '../../../src/styles/DefaultViewStyle';
 storiesOf('Login Form', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Demo', () => (
-    <DefaultViewStyle backgroundColor="white" borderRadius={4} padding={10}>
+    <DefaultViewStyle borderRadius={4} padding={10}>
       <LoginForm />
     </DefaultViewStyle>
   ));

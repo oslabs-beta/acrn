@@ -36,7 +36,7 @@ function CreateAccount(props: Props) {
         importantForAccessibility="no-hide-descendants"
         style={styles.text}
       >
-        Create An Account
+        Create an Account
       </Text>
       <CoreTextInput
         ref={emailRef}
@@ -80,7 +80,8 @@ function CreateAccount(props: Props) {
 
 const styles = StyleSheet.create({
   text: {
-    fontSize: 28,
+    fontSize: 24,
+    paddingVertical: 25,
   },
 });
 export default CreateAccount;
