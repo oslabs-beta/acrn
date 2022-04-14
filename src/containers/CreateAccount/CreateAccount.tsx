@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { View, ViewProps, Alert } from 'react-native';
+import { StyleSheet, View, Text, ViewProps, Alert } from 'react-native';
 import CoreTextInput from '../../components/CoreTextInput/CoreTextInput';
-import NewButton from '../../components/NewButton/NewButton';
+import Button from '../../components/Button/Button';
 
 /**
  * Allow user to enter in:
@@ -31,6 +31,13 @@ function CreateAccount(props: Props) {
       accessibilityLabel={accessibilityLabel}
       accessibilityHint={accessibilityHint}
     >
+      <Text
+        accessibilityElementsHidden
+        importantForAccessibility="no-hide-descendants"
+        style={styles.text}
+      >
+        Create An Account
+      </Text>
       <CoreTextInput
         ref={emailRef}
         value={username}
@@ -54,7 +61,7 @@ function CreateAccount(props: Props) {
         placeholder="Choose password"
         secureTextEntry={true}
       />
-      <NewButton
+      <Button
         text="Submit"
         onLongPress={() =>
           Alert.alert('Alert Title', 'My Alert Msg', [
@@ -71,4 +78,9 @@ function CreateAccount(props: Props) {
   );
 }
 
+const styles = StyleSheet.create({
+  text: {
+    fontSize: 28,
+  },
+});
 export default CreateAccount;

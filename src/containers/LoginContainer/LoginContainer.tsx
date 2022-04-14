@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
-import AccessibleTextInput from '../../components/AccessibleTextInput/AccessibleTextInput';
-import NewButton from '../../components/NewButton/NewButton';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import Button from '../../components/Button/Button';
 
 // TODO: refactor using CoreTextInput
 
@@ -10,12 +10,12 @@ function LoginContainer() {
     useState(false);
   return (
     <View>
-      <AccessibleTextInput
+      <LoginForm
         setCredentialsAreSubmittable={(bool: boolean): void => {
           setCredentialsAreSubmittable(bool);
         }}
       />
-      <NewButton
+      <Button
         text="Login"
         accessibilityElementsHidden={!credentialsAreSubmittable}
         importantForAccessibility={
