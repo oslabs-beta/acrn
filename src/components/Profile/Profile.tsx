@@ -5,8 +5,6 @@ type PressableWithoutStyleProps = Omit<PressableProps, 'style'>;
 interface ProfileProps extends ImageProps, PressableWithoutStyleProps {
   height: number;
   width: number;
-  withUrlHint?: true;
-  profileLabel?: string;
   callback?: () => any;
   imageFlex?: number;
   imageBackgroundColor?: string;
@@ -19,6 +17,8 @@ interface ProfileProps extends ImageProps, PressableWithoutStyleProps {
 
 function Profile(props: ProfileProps) {
   const {
+    accessibilityLabel,
+    accessibilityHint,
     source,
     height,
     width,
@@ -34,6 +34,8 @@ function Profile(props: ProfileProps) {
   return (
     <Pressable
       onPress={callback}
+      accessibilityLabel={accessibilityLabel}
+      accessibilityHint={accessibilityHint}
       style={{
         flex: imageFlex,
         backgroundColor: imageBackgroundColor,
