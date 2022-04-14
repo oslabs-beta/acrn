@@ -3,8 +3,7 @@ import { View } from 'react-native';
 import AccessibleTextInput from '../../components/AccessibleTextInput/AccessibleTextInput';
 import NewButton from '../../components/NewButton/NewButton';
 
-// TODO: Style butttons
-// TODO: Make NewButton text editable via props
+// TODO: refactor using CoreTextInput
 
 function LoginContainer() {
   const [credentialsAreSubmittable, setCredentialsAreSubmittable] =
@@ -17,6 +16,7 @@ function LoginContainer() {
         }}
       />
       <NewButton
+        text="Login"
         accessibilityElementsHidden={!credentialsAreSubmittable}
         importantForAccessibility={
           credentialsAreSubmittable ? 'yes' : 'no-hide-descendants'

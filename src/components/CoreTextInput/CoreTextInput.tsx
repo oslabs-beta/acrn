@@ -9,7 +9,7 @@ import {
   TextProps,
 } from 'react-native';
 
-// TODO: if we have time, pull out default styles to keep code DRY
+// TODO: pull out default styles to keep code DRY
 const editableTextInputColor = '#494949';
 const disabledTextInputColor = '#BBB';
 const focusedInputColor = 'blue';
@@ -17,23 +17,18 @@ const minimumTouchableSize = 48;
 const backgroundColor = '#FFF';
 
 interface Props extends TextInputProps, TextProps {
-  /** Pass along stylesheet in props */
-  //TODO: CHANGE STYLE TYPE FOR A STYLESHEET.CREATE StyleProp<TextStyle>
-  /** Pass along label and placeholder props for input */
-  labelText?: string;
+  labelText: string;
   placeholderText?: string;
-  // changeEditable?: boolean;
-  // TODO: find a way to avoid this any
   style?: any;
 }
 
 const CoreTextInput = React.forwardRef<TextInput, Props>(
   (
     {
-      labelText = 'Label Placeholder',
-      placeholderText = 'Placeholder',
-      accessibilityLabel = 'Accessible Text Input',
-      // changeEditable = true,
+      labelText = 'Field Name',
+      placeholderText = 'Placeholder text',
+      accessibilityLabel, // will default to labelText if not provided
+      accessibilityHint,
       style,
       ...rest
     }: Props,
@@ -59,6 +54,7 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
     const defaultStyle = StyleSheet.create({
       label: {
         color: valueIsFocused ? focusedInputColor : textInputColor,
+        fontSize: 16,
       },
       input: {
         backgroundColor: backgroundColor,
@@ -83,8 +79,9 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
     return (
       <View
         accessible
-        accessibilityLabel={accessibilityLabel}
+        accessibilityLabel={accessibilityLabel || labelText}
         accessibilityState={accessibilityState}
+        accessibilityHint={accessibilityHint}
       >
         <Text
           style={style ? [defaultStyle.label, style.label] : defaultStyle.label}
@@ -92,6 +89,8 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
           {labelText}
         </Text>
         <TextInput
+          accessibilityElementsHidden
+          importantForAccessibility="no-hide-descendants"
           ref={ref}
           style={style ? [defaultStyle.input, style.input] : defaultStyle.input}
           placeholder={rest.placeholder ? rest.placeholder : placeholderText}

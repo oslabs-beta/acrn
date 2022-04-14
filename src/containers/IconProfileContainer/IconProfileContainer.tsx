@@ -5,13 +5,13 @@ import NewButton from '../../components/NewButton/NewButton';
 
 interface Props extends PressableProps {
   uri: string;
-  buttonText: string;
+  buttonText: string; //used as accessibility label for pressable
   height: number;
   width: number;
   padding?: number;
-  outerFunc?: () => any; // ? Are args typ needed?
+  outerFunc?: () => any;
   innerFunc?: () => any;
-  withUrlHint?: true;
+  imageHint?: string; //option hint to be read when image is screenread
   profileLabel?: string;
   imageFlex?: number;
   imageBackgroundColor?: string;
@@ -38,10 +38,8 @@ function IconProfileContainer(props: Props) {
     padding,
     outerFunc,
     innerFunc,
-    withUrlHint,
-    profileLabel,
     accessibilityHint,
-    imageFlex,
+    imageHint,
     imageBackgroundColor,
     imageBorderRadius,
     imageBorderColor,
@@ -53,19 +51,15 @@ function IconProfileContainer(props: Props) {
     <Pressable
       accessibilityLabel={buttonText}
       accessibilityHint={accessibilityHint}
-      accessibilityRole="button"
       onPress={outerFunc || (() => handlePress(uri))}
       style={{ padding }}
     >
       <Profile
-        accessibilityLabel={buttonText}
+        accessibilityHint={imageHint}
         source={{ uri }}
         height={height}
         width={width}
-        withUrlHint={withUrlHint}
         callback={innerFunc}
-        profileLabel={profileLabel}
-        imageFlex={imageFlex}
         imageBackgroundColor={imageBackgroundColor}
         imageBorderRadius={imageBorderRadius}
         imageBorderColor={imageBorderColor}
