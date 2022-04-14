@@ -13,7 +13,7 @@ storiesOf('IconProfile', module)
       width={100}
       padding={50}
       accessibilityHint="Tap to view Profile"
-      imageHint="Tap to visit image U.R.L."
+      imageHint="Ekans is a purple, serpentine Pokémon"
       imageBackgroundColor="white"
       imageBorderColor="black"
       imageMargin={5}

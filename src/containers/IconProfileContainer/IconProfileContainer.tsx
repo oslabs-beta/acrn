@@ -37,7 +37,6 @@ function IconProfileContainer(props: Props) {
     width,
     padding,
     outerFunc,
-    innerFunc,
     accessibilityHint,
     imageHint,
     imageBackgroundColor,
@@ -59,7 +58,7 @@ function IconProfileContainer(props: Props) {
         source={{ uri }}
         height={height}
         width={width}
-        callback={innerFunc}
+        callback={() => handlePress(uri)}
         imageBackgroundColor={imageBackgroundColor}
         imageBorderRadius={imageBorderRadius}
         imageBorderColor={imageBorderColor}
