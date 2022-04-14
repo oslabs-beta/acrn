@@ -48,6 +48,7 @@ function AccessibleTextInput(props: Props) {
         usernameIsFocused || passwordIsFocused
           ? focusedInputColor
           : textInputColor,
+      fontSize: 28,
     },
     input: {
       backgroundColor: backgroundColor,
