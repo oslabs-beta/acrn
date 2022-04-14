@@ -1,8 +1,14 @@
 import React from 'react';
-import { View, ViewProps, Text } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  ViewProps,
+  Text,
+  StatusBar,
+} from 'react-native';
 import ExternalUrl from '../../components/ExternalUrl/ExternalUrl';
 import type { Url } from '../../components/ExternalUrl/ExternalUrl';
-
 // TODO: Create InternalLink Component
 
 /*
@@ -58,17 +64,42 @@ function NavigationMenu(props: Props) {
   // ? Consider using ScrollView
   if (menuTitle) {
     return (
-      <View accessibilityLabel={accessibilityLabel} accessibilityRole="menu">
-        <Text accessibilityRole="header"> {menuTitle} </Text>
-        {urls}
+      <View
+        accessibilityLabel={accessibilityLabel}
+        accessibilityRole="menu"
+        style={styles.container}
+      >
+        <Text accessibilityRole="header" style={styles.text}>
+          {menuTitle}
+        </Text>
+        <ScrollView style={styles.scrollView}>{urls}</ScrollView>
       </View>
     );
   }
   return (
-    <View accessibilityLabel={accessibilityLabel} accessibilityRole="menu">
-      {urls}
+    <View
+      accessibilityLabel={accessibilityLabel}
+      accessibilityRole="menu"
+      style={styles.container}
+    >
+      <ScrollView style={styles.scrollView}>{urls}</ScrollView>
     </View>
   );
 }
+
+const backgroundColor = 'pink';
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingTop: StatusBar.currentHeight,
+  },
+  scrollView: {
+    backgroundColor: backgroundColor,
+    marginHorizontal: 20,
+  },
+  text: {
+    fontSize: 28,
+  },
+});
 
 export default NavigationMenu;
