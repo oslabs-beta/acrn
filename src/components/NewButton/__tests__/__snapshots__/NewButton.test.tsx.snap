@@ -1,7 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[` 1`] = `undefined`;
-
 exports[`Accessible NewButton accessibility role is button 1`] = `
 <View
   accessibilityRole="button"
@@ -17,9 +15,29 @@ exports[`Accessible NewButton accessibility role is button 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "blue",
+      "borderRadius": 20,
+      "elevation": 4,
+      "justifyContent": "center",
+      "marginVertical": 5,
+      "paddingHorizontal": 32,
+      "paddingVertical": 12,
+    }
+  }
   text="New Button"
 >
-  <Text>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 14,
+        "fontWeight": "bold",
+      }
+    }
+  >
     New Button
   </Text>
 </View>
@@ -40,9 +58,29 @@ exports[`Accessible NewButton button is pressable 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "blue",
+      "borderRadius": 20,
+      "elevation": 4,
+      "justifyContent": "center",
+      "marginVertical": 5,
+      "paddingHorizontal": 32,
+      "paddingVertical": 12,
+    }
+  }
   text="New Button"
 >
-  <Text>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 14,
+        "fontWeight": "bold",
+      }
+    }
+  >
     New Button
   </Text>
 </View>
@@ -63,78 +101,29 @@ exports[`Accessible NewButton renders input text 1`] = `
   onResponderTerminate={[Function]}
   onResponderTerminationRequest={[Function]}
   onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "blue",
+      "borderRadius": 20,
+      "elevation": 4,
+      "justifyContent": "center",
+      "marginVertical": 5,
+      "paddingHorizontal": 32,
+      "paddingVertical": 12,
+    }
+  }
   text="New Button"
 >
-  <Text>
-    New Button
-  </Text>
-</View>
-`;
-
-exports[`Accessible Text Input accessibility role is button 1`] = `
-<View
-  accessibilityRole="button"
-  accessible={true}
-  collapsable={false}
-  focusable={true}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  text="New Button"
->
-  <Text>
-    New Button
-  </Text>
-</View>
-`;
-
-exports[`Accessible Text Input button is pressable 1`] = `
-<View
-  accessibilityRole="button"
-  accessible={true}
-  collapsable={false}
-  focusable={true}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  text="New Button"
->
-  <Text>
-    New Button
-  </Text>
-</View>
-`;
-
-exports[`Accessible Text Input renders input text 1`] = `
-<View
-  accessibilityRole="button"
-  accessible={true}
-  collapsable={false}
-  focusable={true}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onFocus={[Function]}
-  onResponderGrant={[Function]}
-  onResponderMove={[Function]}
-  onResponderRelease={[Function]}
-  onResponderTerminate={[Function]}
-  onResponderTerminationRequest={[Function]}
-  onStartShouldSetResponder={[Function]}
-  text="New Button"
->
-  <Text>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 14,
+        "fontWeight": "bold",
+      }
+    }
+  >
     New Button
   </Text>
 </View>
