@@ -1,18 +1,16 @@
 import { storiesOf } from '@storybook/react-native';
 import React from 'react';
 import CenterView from '../CenterView';
-// import { StyleSheet } from 'react-native';
 import CoreTextInput from '../../../src/components/CoreTextInput/CoreTextInput';
-
-// const testStyle = StyleSheet.create({
-//   input: {
-//     color: 'orange',
-//   },
-//   label: {
-//     color: 'orange',
-//   },
-// });
+import Styling from '../../../src/styles/GeneralViewStyles';
 
 storiesOf('CoreTextInput', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
-  .add('Core Text input', () => <CoreTextInput />);
+  .add('Core Text input', () => (
+    <Styling backgroundColor="#D3D3D3" borderRadius={4} padding={10}>
+      <CoreTextInput
+        labelText="Sample Text Input"
+        placeholderText="Enter text here"
+      />
+    </Styling>
+  ));

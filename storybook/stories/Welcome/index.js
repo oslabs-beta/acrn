@@ -28,7 +28,8 @@ export default class Welcome extends React.Component {
       showApp();
     }
   };
-  // TODO customize for acrn users
+  // TODO customize welcome text for acrn users
+
   render() {
     return (
       <View style={this.styles.wrapper}>

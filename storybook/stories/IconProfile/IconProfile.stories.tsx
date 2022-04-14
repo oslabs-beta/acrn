@@ -12,9 +12,8 @@ storiesOf('IconProfile', module)
       height={100}
       width={100}
       padding={50}
-      profileLabel="Ekans' Profile Picture"
-      accessibilityHint="Tap to view Pokemon Profile"
-      imageFlex={1}
+      accessibilityHint="Tap to view Profile"
+      imageHint="Tap to visit image U.R.L."
       imageBackgroundColor="white"
       imageBorderColor="black"
       imageMargin={5}

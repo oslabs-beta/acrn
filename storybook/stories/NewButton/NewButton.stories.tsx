@@ -7,6 +7,7 @@ storiesOf('NewButton', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('New Button', () => (
     <NewButton
+      text="Button"
       onPressIn={() => console.log('onPressIn')}
       onPress={() => console.log('onPress')}
       onPressOut={() => console.log('onPressOut')}
