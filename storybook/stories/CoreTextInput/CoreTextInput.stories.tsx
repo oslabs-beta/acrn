@@ -7,7 +7,7 @@ import DefaultViewStyle from '../../../src/styles/DefaultViewStyle';
 storiesOf('Text Input', module)
   .addDecorator((getStory) => <CenterView>{getStory()}</CenterView>)
   .add('Demo', () => (
-    <DefaultViewStyle backgroundColor="#D3D3D3" borderRadius={4} padding={10}>
+    <DefaultViewStyle borderRadius={4} padding={10}>
       <CoreTextInput
         labelText="Sample Text Input"
         placeholderText="Enter text here"
