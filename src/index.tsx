@@ -2,6 +2,7 @@ export { default as LoginForm } from './components/LoginForm/LoginForm';
 export { default as Button } from './components/Button/Button';
 export { default as CoreTextInput } from './components/CoreTextInput/CoreTextInput';
 export { default as Url } from './components/Url/Url';
+export { default as UrlText } from './components/Url/Url';
 export { default as PressableImage } from './components/PressableImage/PressableImage';
 export { default as CreateAccount } from './containers/CreateAccount/CreateAccount';
 export { default as ProfileCard } from './containers/ProfileCard/ProfileCard';

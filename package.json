@@ -1,6 +1,6 @@
 {
   "name": "acrn-rn",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "An accessibility first component library for React Native",
   "keywords": [
     "android",
