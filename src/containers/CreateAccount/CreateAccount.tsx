@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { StyleSheet, View, Text, ViewProps, Alert } from 'react-native';
 import CoreTextInput from '../../components/CoreTextInput/CoreTextInput';
-import NewButton from '../../components/NewButton/NewButton';
+import Button from '../../components/Button/Button';
 
 /**
  * Allow user to enter in:
@@ -61,7 +61,7 @@ function CreateAccount(props: Props) {
         placeholder="Choose password"
         secureTextEntry={true}
       />
-      <NewButton
+      <Button
         text="Submit"
         onLongPress={() =>
           Alert.alert('Alert Title', 'My Alert Msg', [

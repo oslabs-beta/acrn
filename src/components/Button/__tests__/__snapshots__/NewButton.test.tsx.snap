@@ -1,0 +1,130 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accessible Button accessibility role is button 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "blue",
+      "borderRadius": 20,
+      "elevation": 4,
+      "justifyContent": "center",
+      "marginVertical": 5,
+      "paddingHorizontal": 32,
+      "paddingVertical": 12,
+    }
+  }
+  text="New Button"
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 14,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    New Button
+  </Text>
+</View>
+`;
+
+exports[`Accessible Button button is pressable 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "blue",
+      "borderRadius": 20,
+      "elevation": 4,
+      "justifyContent": "center",
+      "marginVertical": 5,
+      "paddingHorizontal": 32,
+      "paddingVertical": 12,
+    }
+  }
+  text="New Button"
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 14,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    New Button
+  </Text>
+</View>
+`;
+
+exports[`Accessible Button renders input text 1`] = `
+<View
+  accessibilityRole="button"
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onFocus={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "blue",
+      "borderRadius": 20,
+      "elevation": 4,
+      "justifyContent": "center",
+      "marginVertical": 5,
+      "paddingHorizontal": 32,
+      "paddingVertical": 12,
+    }
+  }
+  text="New Button"
+>
+  <Text
+    style={
+      Object {
+        "color": "white",
+        "fontSize": 14,
+        "fontWeight": "bold",
+      }
+    }
+  >
+    New Button
+  </Text>
+</View>
+`;
