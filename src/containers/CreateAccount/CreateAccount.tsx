@@ -43,7 +43,7 @@ function CreateAccount(props: Props) {
         value={username}
         onChangeText={(text) => setUsername(text)}
         labelText="Email"
-        placeholder="username@domain.com"
+        placeholder="Enter email address"
       />
       <CoreTextInput
         ref={passwordRef}

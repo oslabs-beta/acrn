@@ -89,8 +89,6 @@ const CoreTextInput = React.forwardRef<TextInput, Props>(
           {labelText}
         </Text>
         <TextInput
-          accessibilityElementsHidden
-          importantForAccessibility="no-hide-descendants"
           ref={ref}
           style={style ? [defaultStyle.input, style.input] : defaultStyle.input}
           placeholder={rest.placeholder ? rest.placeholder : placeholderText}
